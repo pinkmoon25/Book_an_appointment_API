@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   before_action :set_current_user
 
   def create
-    user = User.find_by(email: params['email'])
+    user = User.find_by(username: params['username'])
 
     if user&.authenticate(params['password'])
       session[:user_id] = user.id
