@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :set_current_user
+  before_action :current_user
 
   def create
     user = User.find_by(username: params['username'])
@@ -19,9 +19,9 @@ class SessionsController < ApplicationController
   end
 
   def logged_in
-    if @current_user
+    if current_user
       render json: {
-        user: @current_user.to_json(only: %i[id username]),
+        user: current_user.to_json(only: %i[id username]),
         logged_in: true
       }
     else
@@ -39,9 +39,9 @@ class SessionsController < ApplicationController
     }
   end
 
-  protected
+  private
 
-  def set_current_user
-    @current_user = User.find(session[:user_id]) if session[:user_id]
+  def current_user
+    @current_user = User.find_by(id: session[:user_id])
   end
 end
