@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  before_action :current_user
 
   def create
     user = User.find_by(username: params['username'])
@@ -37,11 +36,5 @@ class SessionsController < ApplicationController
       status: 200,
       logged_out: true
     }
-  end
-
-  private
-
-  def current_user
-    @current_user = User.find_by(id: session[:user_id])
   end
 end
