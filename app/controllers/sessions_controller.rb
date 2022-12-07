@@ -7,8 +7,8 @@ class SessionsController < ApplicationController
       render json: {
         status: :created,
         logged_in: true,
-        user: user.to_json(only: %i[id username], include: {reservations:
-          { include: :mentor }})
+        user: user.to_json(only: %i[id username], include: { reservations:
+          { include: :mentor } })
       }
     else
       render json: {
