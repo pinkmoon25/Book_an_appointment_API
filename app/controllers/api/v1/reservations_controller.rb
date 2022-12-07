@@ -13,9 +13,17 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def destroy
-    user = User.find(id: params[:user_id])
-    mentor = user.mentors.find_by(mentor_id: params[:mentor_id])
-    reservation = Reservation.find_by(mentor_id: params[:mentor_id]).where(user_id: params[:user_id])
-    reservation.destroy
+    reservation = Reservation.find(params[:id])
+    if reservation
+      reservation.destroy
+      render json: {
+        status: 200,
+        message: 'reservation deleted successfully'
+      }
+    else
+      render json: {
+        error: reservation.errors.full_messages
+      }
+    end
   end
 end
