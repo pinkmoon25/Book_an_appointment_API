@@ -6,22 +6,22 @@ RSpec.describe Reservation, type: :model do
       reservation = Reservation.reflect_on_association(:user)
       association = reservation.macro
       expect(association).to eq(:belongs_to)
-      end
+    end
     it('belongs to mentor') do
       reservation = Reservation.reflect_on_association(:mentor)
       association = reservation.macro
       expect(association).to eq(:belongs_to)
-    end 
+    end
   end
   describe 'validation test' do
     user = User.first
     mentor = Mentor.first
     it 'should be valid with correct parameters' do
-      reservation = Reservation.new(user: user, subject: 'ruby', mentor: mentor, date: '2022-12-12')
+      reservation = Reservation.new(user:, subject: 'ruby', mentor:, date: '2022-12-12')
       expect(reservation).to be_valid
     end
     it 'should be invalid with incorrect parameters' do
-      reservation = Reservation.new(user: user, subject: '', mentor: mentor, date: '')
+      reservation = Reservation.new(user:, subject: '', mentor:, date: '')
       expect(reservation).to_not be_valid
     end
   end

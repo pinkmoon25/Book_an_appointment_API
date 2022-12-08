@@ -6,12 +6,12 @@ RSpec.describe User, type: :model do
       user = User.reflect_on_association(:reservations)
       association = user.macro
       expect(association).to eq(:has_many)
-      end
+    end
     it('has many mentors') do
       user = User.reflect_on_association(:mentors)
       association = user.macro
       expect(association).to eq(:has_many)
-    end 
+    end
   end
   describe 'validation test' do
     it 'should be valid with correct parameters' do
