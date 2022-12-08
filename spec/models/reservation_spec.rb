@@ -14,14 +14,16 @@ RSpec.describe Reservation, type: :model do
     end
   end
   describe 'validation test' do
-    user = User.first
-    mentor = Mentor.first
+    before(:example) do
+      @user = User.first
+      @mentor = Mentor.first
+    end
     it 'should be valid with correct parameters' do
-      reservation = Reservation.new(user:, subject: 'ruby', mentor:, date: '2022-12-12')
+      reservation = Reservation.new(user: @user , subject: 'ruby', mentor: @mentor, date: '2022-12-12')
       expect(reservation).to be_valid
     end
     it 'should be invalid with incorrect parameters' do
-      reservation = Reservation.new(user:, subject: '', mentor:, date: '')
+      reservation = Reservation.new(user: @user, subject: '', mentor: @mentor, date: '')
       expect(reservation).to_not be_valid
     end
   end
