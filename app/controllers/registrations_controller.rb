@@ -14,7 +14,8 @@ class RegistrationsController < ApplicationController
       }
     else
       render json: {
-        status: 500
+        status: 500,
+        message: user.errors.full_messages
       }
     end
   end
