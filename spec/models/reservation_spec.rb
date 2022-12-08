@@ -19,7 +19,7 @@ RSpec.describe Reservation, type: :model do
       @mentor = Mentor.first
     end
     it 'should be valid with correct parameters' do
-      reservation = Reservation.new(user: @user , subject: 'ruby', mentor: @mentor, date: '2022-12-12')
+      reservation = Reservation.new(user: @user, subject: 'ruby', mentor: @mentor, date: '2022-12-12')
       expect(reservation).to be_valid
     end
     it 'should be invalid with incorrect parameters' do
