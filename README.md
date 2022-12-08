@@ -130,16 +130,12 @@ To run the project, execute the following command:
 To run tests, run the following command:
 
 ```sh
-  rspec spec/integration
+  rake db:seed RAILS_ENV=test
+  rspec spec/models/
 ```
 
 ### Deployment
-
-You can deploy this project using:
-
-```sh
-  git push heroku main
-```
+coming soon...
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -195,6 +191,6 @@ I would like to thank Microverse for giving me the opportunity to work on this p
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
