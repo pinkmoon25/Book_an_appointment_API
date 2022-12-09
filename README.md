@@ -33,7 +33,7 @@
 
 [Kanban Board Link](https://github.com/users/PinkMoon25/projects/6)
 
-![kanban](./src/assets/images/Screenshot%202022-12-08%20at%2016.35.04.png)
+![kanban](./Screenshot%202022-12-08%20at%2016.35.04.png)
 
 # 📖 MentorCity  <a name="about-project"></a>
 
