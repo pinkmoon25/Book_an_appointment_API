@@ -41,7 +41,7 @@
 
 ## Frontend
 
-The frontend was made with React Js and can be found [here](git@github.com:PinkMoon25/Book_an_appointment_front_end.git)
+The frontend was made with React Js and can be found [here](https://github.com/PinkMoon25/Book_an_appointment_front_end)
 
 ## 🛠 Built With <a name="built-with"></a>
 
