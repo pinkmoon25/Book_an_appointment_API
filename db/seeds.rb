@@ -11,6 +11,7 @@ User.destroy_all
 
 user_one = User.create(username: 'tushar', email: 'tushar@rails.com', password: 'password')
 user_two = User.create(username: 'oyin', email: 'oyin@react.com', password: 'password')
+admin = User.create(username: 'adminTushar', email: 'admintushar@rails.com', admin: true,  password: 'iamadmin')
 
 tushar = Mentor.create({name: 'Tushar', 
   bio: 'I am tushar a fullstack developer from India', 
